@@ -4,7 +4,7 @@ import threading
 
 
 screenLock = threading.Semaphore(value=1)
-#### global open_port_count
+# global open_port_count
 open_port_count=0
 
 
@@ -47,11 +47,11 @@ def main():
 
     parser = optparse.OptionParser("%prog -H <target host> -p <target port>")
     parser.add_option('-H',dest='tgtHost',type='string',help='specify target host')
-#   parser.add_option('-p' ,dest='tgtPort',type='string',help='specify target port[s] separated by comma')
+  # parser.add_option('-p' ,dest='tgtPort',type='string',help='specify target port[s] separated by comma')
     parser.add_option('-p' ,dest='tgtPorts',type='string',help='specify target port[s] separated by comma')
     (options,args) = parser.parse_args()
     tgtHost = options.tgtHost
-#   tgtPorts=str(options.tgtPort).split(',')
+  # tgtPorts=str(options.tgtPort).split(',')
     print('the ports list is %s' %options.tgtPorts)
     print('the type of options.tgtPorts is ' , type(options.tgtPorts) )
     tgtPorts = str(options.tgtPorts).split(',')
